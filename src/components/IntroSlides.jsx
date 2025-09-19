@@ -10,7 +10,7 @@ export default function IntroSlides({ onComplete }) {
     if (index < slides.length - 1) {
       const timer = setTimeout(() => {
         setIndex(index + 1);
-      }, 1000); // 1.8s per slide
+      }, 3000); // 1.8s per slide
       return () => clearTimeout(timer);
     } else {
       // last slide, go to main content after a pause
