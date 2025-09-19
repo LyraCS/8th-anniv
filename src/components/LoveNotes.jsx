@@ -9,7 +9,7 @@ export default function LoveNotes() {
     <div className="card" style={{ maxWidth: 720 }}>
       <h3 style={{ marginTop: 0, fontSize: 25 }}>Lyrics Snippets!</h3>
       <p style={{ fontSize: 18 }}>{note}</p>
-      <button className="button" onClick={next}>CLICK HERE TO RANDOMIZE</button>
+      <button className="button" onClick={next}>CLICK HERE TO RANDOMIZE ME :D</button>
     </div>
   );
 }
