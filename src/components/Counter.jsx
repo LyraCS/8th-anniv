@@ -70,7 +70,7 @@ export default function Counter({ startDate }) {
         {String(seconds).padStart(2, "0")}
       </p>
 
-      <h3 style={{ marginTop: 24 }}>Next Anniversary Countdown</h3>
+      <h3 style={{ marginTop: 24 }}>Next Anniversary In</h3>
       <p style={{ fontSize: 20, fontWeight: "500" }}>
         {cdDays} days, {cdHours} hours, {cdMinutes} minutes, {cdSeconds} seconds
       </p>
