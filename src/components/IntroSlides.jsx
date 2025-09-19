@@ -16,7 +16,7 @@ export default function IntroSlides({ onComplete }) {
       // last slide, go to main content after a pause
       const timer = setTimeout(() => {
         onComplete?.();
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [index]);
