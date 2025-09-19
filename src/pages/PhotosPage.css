@@ -1,0 +1,86 @@
+/* Page container itself does not scroll */
+.photos-page {
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+/* Internal vertical scroller that fills the remaining viewport height */
+.photos-scroll {
+  max-height: calc(100vh - 160px); /* header + padding + some room for nav */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 10px;
+
+  /* Hide scrollbar — all browsers */
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE/old Edge */
+}
+.photos-scroll::-webkit-scrollbar { display: none; } /* Chrome/Safari/Edge */
+
+/* Your original grid */
+.polaroid-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Polaroid card */
+.polaroid {
+  background: #fff;
+  padding: 10px;
+  width: 160px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #000;
+  border-radius: 6px;
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.polaroid span {
+  font-family: "Caveat", cursive; /* handwritten vibe */
+  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+/* Lightbox */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.overlay img.enlarged {
+  max-width: 90%;
+  max-height: 70%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border-radius: 6px;
+}
+
+.overlay p {
+  margin-top: 16px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Caveat", cursive;
+}

@@ -1,0 +1,108 @@
+.extra-player { width: 100%; padding: 20px; }
+
+.player-card {
+  width: 100%;
+  max-width: 420px;            /* smaller */
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(26,22,48,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+.player-cover {
+  width: 100%;
+  max-width: 320px;         /* keeps it from being massive */
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #2a2547;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-cover img {
+  max-width: 100%;
+  height: auto;             /* keep natural ratio */
+  display: block;
+}
+
+.cover-fallback {
+  font-size: 42px;
+}
+
+.player-meta { text-align: center; line-height: 1.2; }
+.player-title { font-size: 25px; font-weight: 600; }
+.player-artist { font-size: 17px; opacity: 0.85; margin-top: 5px; }
+.player-note { font-size: 18px; opacity: 0.95; margin-top: 10px; }
+
+.player-progress { display: grid; gap: 4px; }
+.seek {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  outline: none;
+  /* two backgrounds: 1) gradient fill (resized by background-size), 2) base rail */
+  background:
+    linear-gradient(90deg, #ff5bc4, #7cf4ff) no-repeat,
+    rgba(255, 255, 255, 0.18);
+  background-size: 0% 100%;              /* JS sets this */
+  cursor: pointer;
+}
+
+/* Chrome, Edge, Safari thumb */
+.seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.25);
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  margin-top: -3px; /* centers thumb on 8px rail */
+}
+
+/* Chrome track reset */
+.seek::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+}
+.time {
+  display: flex; justify-content: space-between;
+  font-size: 12px; opacity: 0.85;
+}
+
+.player-controls {
+  display: flex; justify-content: center; gap: 10px;
+}
+.pill {
+  border: 0; border-radius: 12px; padding: 8px 12px; cursor: pointer;
+  background: rgba(255,255,255,0.12); color: #fff; font-weight: 800;
+}
+.pill.main {
+  background: linear-gradient(90deg,#ff5bc4,#7cf4ff);
+  color: #0b0b0f;
+}
+
+.player-volume {
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+}
+.vol { width: 160px; }
+
+.page-caption {
+  margin-top: 6px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: center;
+  font-style: italic;
+}
